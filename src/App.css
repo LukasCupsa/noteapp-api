@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+/* CSS for body */
+body {
+  margin: 20px;
+  background-color: lightblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CSS for default screen settings */
+.app-container {
+  grid-template-columns: 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* CSS for screens bigger than 600px */
+@media (min-width: 600px) {
+  .app-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* CSS for sizing and detaling of notes grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  );
+  grid-auto-rows: minmax(250px, auto);
+  gap: 20px; 
+}
+
+/* CSS for notes items and boxes */
+.note-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px
+    rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* CSS for note button (basically I'm putting the x to the top right end) */
+.notes-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CSS for adjusting the button featues of the x */
+.notes-header button {
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+/* Removing the margin between the header / text boxes due to previous code */
+h2 {
+  margin: 0;
+}
+
+/* CSS for aligning the note form for adding notes */
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cleaning up the text areas to look nicer */
+textarea,
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Changing the Add Note button to look more appealing */
+.note-form button {
+  border-radius: 5px;
+  background-color: rgb(64, 154, 184);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling the button when cursor hovers over Add Note button */
+.note-form button:hover {
+  background-color: rgb(106, 175, 198);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.edit-buttons button {
+  flex: 1;
+}
+
+.edit-buttons button:last-of-type {
+  background-color: rgb(220, 89, 89);
+  color: white;
 }
