@@ -2,9 +2,9 @@
   "name": "notes-app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./index.ts",
   "scripts": {
-    "start": "npx nodemon --exec ts-node ./src/index.ts"
+    "start": "npx nodemon --exec ts-node ./index.ts"
   },
   "author": "",
   "license": "ISC",
