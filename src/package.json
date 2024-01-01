@@ -4,7 +4,8 @@
   "description": "",
   "main": "./index.ts",
   "scripts": {
-    "start": "npx nodemon --exec ts-node ./index.ts"
+    "start": "npx nodemon --exec ts-node ./index.ts",
+    "build": "npx prisma generate"
   },
   "author": "",
   "license": "ISC",
